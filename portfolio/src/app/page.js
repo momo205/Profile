@@ -22,102 +22,115 @@ export default function Home() {
           display: "flex",
           justifyContent: "center",
           padding: "10px 0",
+          backgroundColor: "rgba(255, 255, 255, 0.5)", // Semi-transparent white background
+          borderRadius: "10px", // Rounded corners
+          boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Subtle shadow for depth
+          margin: "20px auto",
+          maxWidth: 1200, // Ensures the AppBar doesn't stretch too wide
         }}
       >
-        <Box
+        <AppBar
+          position="static"
           sx={{
-            width: "fit-content", // Adjust width to fit its content
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            backgroundColor: "rgba(255, 255, 255, 0.5)", // Semi-transparent white background
-            borderRadius: "20px", // Rounded corners
-            padding: "0 20px", // Padding around the AppBar
-            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Subtle shadow for depth
+            backgroundColor: "transparent", // Transparent AppBar
+            boxShadow: "none", // No shadow
+            flexGrow: 1,
           }}
         >
-          <AppBar
-            position="static"
+          <Toolbar
             sx={{
-              backgroundColor: "transparent", // Transparent AppBar
-              boxShadow: "none", // No shadow
+              justifyContent: "space-between", // Center the Toolbar content
+              "& .MuiTypography-root": {
+                margin: "0 20px", // Spacing between menu items
+                color: "#000", // Black color for text
+              },
             }}
           >
-            <Toolbar
+            <Typography variant="h6">Home</Typography>
+            <Typography variant="h6">About Me</Typography>
+            <Typography variant="h6">Skills</Typography>
+            <Typography variant="h6">Experience</Typography>
+            <Typography variant="h6">Projects</Typography>
+            <Button
               sx={{
-                justifyContent: "center", // Center the Toolbar content
-                "& .MuiTypography-root": {
-                  margin: "0 10px", // Spacing between menu items
-                  color: "#000", // Black color for text
-                },
+                fontSize: "16px",
+                fontWeight: 500,
+                backgroundColor: "#fff",
+                color: "#000",
+                border: "1px solid black",
+                borderRadius: "50px",
+                padding: "10px 30px ",
               }}
             >
-              <Typography variant="h6">Home</Typography>
-              <Typography variant="h6">About Me</Typography>
-              <Typography variant="h6">Skills</Typography>
-              <Typography variant="h6">Services</Typography>
-              <Typography variant="h6">My Work</Typography>
-            </Toolbar>
-          </AppBar>
-          <Button
-            variant="outlined"
-            sx={{
-              borderColor: "#000",
-              color: "#000",
-              display: "flex",
-              alignItems: "center",
-              borderRadius: "50px", // Rounded button edges
-            }}
-          >
-            Contact
-          </Button>
-        </Box>
+              Contact
+            </Button>
+          </Toolbar>
+        </AppBar>
       </Box>
 
       <Box
         sx={{
-          marginTop: "350px",
-          padding: "100px",
+          display: "flex",
+          flexDirection: "column",
           alignItems: "center",
-          height: "650px",
-          width: "100%",
-          mt: 5,
+          padding: "100px 20px",
+          textAlign: "center",
         }}
       >
         <Box
           component="img"
           sx={{
-            alignItems: "center",
-            justifyContent: "center",
             borderRadius: "50%",
             border: "3px solid #fff",
             boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
             cursor: "pointer",
             height: 233,
             width: 350,
-            maxHeight: { xs: 233, md: 167 },
-            maxWidth: { xs: 350, md: 250 },
+            maxWidth: { xs: 233, md: 167 },
+            maxHeight: { xs: 350, md: 250 },
           }}
           src="./favicon.ico"
         />
-        <Typography variant="h4" component="h1" gutterBottom>
+        <Typography variant="h4" component="h1" sx={{ mt: 2 }}>
           Hi I'm Muhammad Ahmed
         </Typography>
-        <Typography variant="body1" component="p">
-          I'm a software engineer with a passion for designing and implementing
-          innovative solutions. I have experience working with various
-          technologies such as React, Next.js, and Node.js.
+        <Typography variant="h5" sx={{ mt: 1 }}>
+          Full Stack Software Engineer
         </Typography>
-        <Typography variant="body1" component="p">
-          Feel free to reach out if you have any questions or need assistance
-          with your projects.
+        <Typography variant="body1" sx={{ mt: 2, maxWidth: 600 }}>
+          Aspiring software engineer with front-end and back-end development
+          skills, seeking internships to apply and expand my expertise.
+          Experienced in building scalable web applications using frameworks
+          like Next.js, Firebase, and integrating machine learning models to
+          deliver impactful solutions.
         </Typography>
-        <Button variant="contained" color="primary">
-          {" "}
-          Resume{" "}
+        <Button
+          sx={{
+            mt: 3,
+            fontSize: "16px",
+            fontWeight: 200,
+            backgroundColor: "#fff",
+            color: "#000",
+            border: "1px solid black",
+            borderRadius: "50px",
+            padding: "10px 30px",
+          }}
+        >
+          Contact Me →
         </Button>
-        <Button variant="contained" color="primary" sx={{ marginLeft: "10px" }}>
-          Contact Me
+        <Button
+          sx={{
+            mt: 1,
+            fontSize: "16px",
+            fontWeight: 200,
+            backgroundColor: "#fff",
+            color: "#000",
+            border: "1px solid black",
+            borderRadius: "50px",
+            padding: "10px 30px",
+          }}
+        >
+          My Resume ↓
         </Button>
       </Box>
 
