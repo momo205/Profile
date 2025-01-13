@@ -8,6 +8,7 @@ import {
   Button,
   Paper,
   Grid,
+  CssBaseline,
 } from "@mui/material";
 
 const experiences = [
@@ -17,7 +18,6 @@ const experiences = [
     summary: "Developed mobile apps to enhance user interaction.",
     description:
       "Led the development of innovative mobile applications focusing on improving user engagement through intuitive UI/UX designs. Utilized React Native extensively to ensure cross-platform compatibility.",
-    image: "/images/personaland.jpg", // Placeholder image path
   },
   {
     title: "Department of Design and Construction",
@@ -25,7 +25,6 @@ const experiences = [
     summary: "Performed software testing and QA.",
     description:
       "Engaged in rigorous testing and QA processes for the Civil Service Application Tracker project, ensuring the software met all specified requirements before its deployment.",
-    image: "/images/ddc.jpg", // Placeholder image path
   },
 ];
 const projects = [
@@ -35,7 +34,6 @@ const projects = [
     description:
       "Developed a full-stack web application using Node.js and Next.js to facilitate real-time car auctions and purchases. This system integrates essential features such as live bidding and car history checks.",
     tools: "Node.js, Next.js, MongoDB",
-    image: "/images/auction-architects.jpg", // Placeholder image path
   },
   {
     title: "Materinaize",
@@ -43,7 +41,6 @@ const projects = [
     description:
       "Created a system to monitor maternal health using machine learning algorithms to analyze health data and provide real-time updates to healthcare providers.",
     tools: "React, Node.js, TensorFlow",
-    image: "/images/materinaize.jpg", // Placeholder image path
   },
   {
     title: "Thera Cam",
@@ -51,7 +48,6 @@ const projects = [
     description:
       "Developed an application using Node.js and OpenPose technology to provide real-time exercise feedback, helping users maintain correct form during workouts.",
     tools: "Node.js, OpenPose",
-    image: "/images/thera-cam.jpg", // Placeholder image path
   },
   {
     title: "Fitness AI",
@@ -59,7 +55,6 @@ const projects = [
     description:
       "Implemented a fitness tracking app that uses artificial intelligence to personalize diet and exercise recommendations based on user input.",
     tools: "Node.js, Next.js",
-    image: "/images/fitness-ai.jpg", // Placeholder image path
   },
   {
     title: "Green Scan",
@@ -67,7 +62,6 @@ const projects = [
     description:
       "Developed a platform to recommend how to reuse household waste using AI, promoting environmental protection through practical daily actions.",
     tools: "Node.js, Next.js",
-    image: "/images/green-scan.jpg", // Placeholder image path
   },
   {
     title: "Halal Finder",
@@ -75,136 +69,71 @@ const projects = [
     description:
       "Designed an application to locate the nearest halal restaurants, providing directions and details for users seeking halal options.",
     tools: "Java, Google Maps API",
-    image: "/images/halal-finder.jpg", // Placeholder image path
   },
 ];
 
 export default function Home() {
   return (
-    <Container
-      sx={{
-        fontFamily: "Roboto, sans-serif",
-        padding: "0",
-      }}
-    >
+    <Container maxWidth="100%" disableGutters sx={{ overflow: "hidden" }}>
+      {/* Full-screen background and main container */}
+      <CssBaseline /> {/* Reset margin/padding globally */}
       <Box
         sx={{
-          flexGrow: 1,
-          display: "flex",
-          justifyContent: "center",
-          padding: "10px 0",
-          backgroundColor: "rgba(255, 255, 255, 0.5)", // Semi-transparent white background
-          borderRadius: "10px", // Rounded corners
-          boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Subtle shadow for depth
-          margin: "10px auto",
-          maxWidth: 1200, // Ensures the AppBar doesn't stretch too wide
+          height: "100vh", // Ensure it's using the full height of the viewport
+          width: "100vw", // Ensure it's using the full width of the viewport
+          backgroundImage: 'url("/images/portfolio.jpg")',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          position: "relative", // Ensures the AppBar positions itself relative to this Box
+          overflow: "hidden", // Optional: Prevent any overflow
         }}
       >
         <AppBar
-          position="static"
-          sx={{
-            backgroundColor: "transparent", // Transparent AppBar
-            boxShadow: "none", // No shadow
-            flexGrow: 1,
-          }}
+          position="fixed"
+          sx={{ background: "none", boxShadow: "none", width: "100%" }}
         >
-          <Toolbar
-            sx={{
-              justifyContent: "space-between", // Center the Toolbar content
-              "& .MuiTypography-root": {
-                margin: "0 10px", // Spacing between menu items
-                color: "#000", // Black color for text
-              },
-            }}
-          >
-            <Typography variant="h6">Home</Typography>
-            <Typography variant="h6">About Me</Typography>
-            <Typography variant="h6">Skills</Typography>
-            <Typography variant="h6">Experience</Typography>
-            <Typography variant="h6">Projects</Typography>
-            <Button
-              sx={{
-                fontSize: "16px",
-                fontWeight: 500,
-                backgroundColor: "#fff",
-                color: "#000",
-                border: "1px solid black",
-                borderRadius: "50px",
-                padding: "10px 20px ",
-              }}
-            >
-              Contact
-            </Button>
+          <Toolbar sx={{ justifyContent: "space-between" }}>
+            <Typography variant="h6" sx={{ color: "white" }}>
+              Home
+            </Typography>
+            <Typography variant="h6" sx={{ color: "white" }}>
+              About Me
+            </Typography>
+
+            <Typography variant="h6" sx={{ color: "white" }}>
+              Experience
+            </Typography>
+            <Typography variant="h6" sx={{ color: "white" }}>
+              Projects
+            </Typography>
           </Toolbar>
         </AppBar>
-      </Box>
 
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          padding: "100px 20px",
-          textAlign: "center",
-        }}
-      >
+        {/* Content area in the center */}
         <Box
-          component="img"
           sx={{
-            borderRadius: "50%",
-            border: "3px solid #fff",
-            boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)",
-            cursor: "pointer",
-            height: 233,
-            width: 350,
-            maxWidth: { xs: 233, md: 167 },
-            maxHeight: { xs: 350, md: 250 },
-          }}
-          src="./favicon.ico"
-        />
-        <Typography variant="h5" component="h1" sx={{ mt: 2 }}>
-          Hi I'm Muhammad Ahmed
-        </Typography>
-        <Typography variant="h4" sx={{ mt: 1 }}>
-          Full Stack Software Engineer
-        </Typography>
-        <Typography variant="body1" sx={{ mt: 2, maxWidth: 600 }}>
-          Aspiring software engineer with front-end and back-end development
-          skills, seeking internships to apply and expand my expertise.
-          Experienced in building scalable web applications using frameworks
-          like Next.js, Firebase, and integrating machine learning models to
-          deliver impactful solutions.
-        </Typography>
-        <Button
-          sx={{
-            mt: 3,
-            fontSize: "16px",
-            fontWeight: 200,
-            backgroundColor: "#fff",
-            color: "#000",
-            border: "1px solid black",
-            borderRadius: "50px",
-            padding: "10px 30px",
+            position: "absolute", // Makes sure this Box doesn't affect the AppBar
+            top: "50%", // Center vertically
+            left: "50%", // Center horizontally
+            transform: "translate(-50%, -50%)", // Perfect center alignment
+            textAlign: "center",
+            color: "white",
+            maxWidth: 600, // Restrict content width for readability
           }}
         >
-          Contact Me
-        </Button>
-        <Button
-          sx={{
-            mt: 1,
-            fontSize: "16px",
-            fontWeight: 200,
-            backgroundColor: "#fff",
-            color: "#000",
-            border: "1px solid black",
-            borderRadius: "50px",
-            padding: "10px 30px",
-          }}
-        >
-          My Resume
-        </Button>
-      </Box>
+          <Typography variant="h3" sx={{ mb: 2 }}>
+            Muhammad Ahmed
+          </Typography>
+          <Typography variant="h5">Full Stack Software Engineer</Typography>
 
+          <Button
+            sx={{ mt: 1, color: "white", backgroundColor: "transparent" }}
+          >
+            Resume
+          </Button>
+        </Box>
+      </Box>
       {/* Additional sections like 'about', 'experience', etc., would be similar to the 'home' section but with different content */}
       {/*  <Box
         sx={{
@@ -221,16 +150,19 @@ export default function Home() {
         </Typography>
         <Typography variant="h5" sx={{ maxWidth: 600 }}> C </Typography>
       </Box>*/}
-
-      {/* Projects Section */}
+      {/* projects section */}
       <Box
         sx={{
           padding: "50px 20px",
           textAlign: "center",
-          backgroundColor: "rgba(255, 255, 255, 0.5)",
+          backgroundColor: "rgba(255, 255, 255, 0.7)", // Slightly more transparency
+          backdropFilter: "blur(10px)", // Optional: Adds blur effect to the background
         }}
       >
-        <Typography variant="h4" sx={{ mb: 4, textTransform: "uppercase" }}>
+        <Typography
+          variant="h4"
+          sx={{ mb: 4, textTransform: "uppercase", color: "secondary.main" }}
+        >
           Projects
         </Typography>
         <Grid container spacing={4} justifyContent="center">
@@ -251,7 +183,7 @@ export default function Home() {
                   transition: "transform 0.3s, box-shadow 0.3s",
                   "&:hover": {
                     transform: "scale(1.05)",
-                    boxShadow: "0 8px 24px rgba(0,0,0,0.3)",
+                    boxShadow: "0 8px 24px rgba(0,0,0,0.5)", // Enhanced shadow on hover for better visibility
                   },
                   overflow: "hidden",
                 }}
@@ -259,21 +191,32 @@ export default function Home() {
                 <Box
                   sx={{
                     p: 2,
-                    backgroundColor: "rgba(255,255,255,0.8)",
+                    backgroundColor: "rgba(255,255,255,0.85)", // Increase opacity for better readability
                     width: "100%",
                     height: "100%",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "space-between",
+                    color: "text.primary", // Ensure text color is readable
                   }}
                 >
-                  <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+                  <Typography
+                    variant="h6"
+                    sx={{ fontWeight: "bold", fontSize: "1.25rem" }}
+                  >
                     {project.title}
                   </Typography>
-                  <Typography variant="body2" sx={{ fontSize: 12 }}>
+                  <Typography
+                    variant="body2"
+                    sx={{ fontSize: 14, display: "block", mt: 1 }}
+                  >
                     {project.role}
                   </Typography>
-                  <Typography variant="body2" sx={{ display: "none" }}>
+                  {/* Now showing on hover */}
+                  <Typography
+                    variant="body2"
+                    sx={{ fontSize: 12, display: "block", mt: 1 }}
+                  >
                     {project.description} | Tools: {project.tools}
                   </Typography>
                 </Box>
@@ -282,7 +225,6 @@ export default function Home() {
           ))}
         </Grid>
       </Box>
-
       {/* Experience Section */}
       <Box
         sx={{
