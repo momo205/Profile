@@ -1,0 +1,160 @@
+.fullScreenContainer {
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* background-color: #f0f0f0; /* Lighter shade of white */
+  color: #333; /* Darker text color for better contrast */
+  font-family: "Arial", sans-serif; /* Font similar to the image */
+  height: 100vh;
+  padding: 20px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Space between text and icons */
+}
+
+.title h1 {
+  font-size: 48px;
+  margin: 0;
+  margin-left: 45px;
+}
+
+.title h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #000000; /* Line under the text */
+}
+.images {
+  display: inline-block;
+}
+
+.iconLink {
+  display: inline-block;
+  width: 80px; /* Set consistent size for icons */
+  height: 80px;
+  background-size: cover; /* Ensure the icon covers the element */
+  background-repeat: no-repeat; /* No repeat of the background */
+  margin: 10px; /* Add some space around the icons */
+}
+
+/* Specific icon adjustments might be necessary depending on their original size and aspect ratio */
+.iconLinkedIn img,
+.iconMedium img {
+  width: 100%; /* Scale the images to fit their containers */
+  height: 100%; /* Maintain aspect ratio */
+  object-fit: contain; /* Avoid stretching images */
+}
+
+.resumeButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: 1px solid black;
+  color: black;
+  background-color: transparent; /* Ensure button background is transparent */
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px; /* Adjust font size for visibility */
+}
+.navigationBar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center the links */
+  padding: 10px 20px;
+  background: linear-gradient(135deg, transparent); /* Gradient background */
+  border-radius: 20px; /* Rounded corners */
+  margin: 20px auto; /* Center horizontally and add some margin top and bottom */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  z-index: 1000;
+  color: black;
+  border: 1px solid transparent;
+}
+
+.navLink {
+  color: black;
+  text-decoration: none;
+  padding: 10px 15px; /* Adjust padding to bring links closer */
+  margin: 0 10px; /* Space between links */
+  font-weight: bold; /* Make the text bold */
+  transition: color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.navLink:hover {
+  color: #ffdfef; /* Light pink color on hover */
+}
+
+.contentContainer,
+.aboutContainer,
+.projectsContainer,
+.experienceContainer {
+  width: 100%;
+  height: 100vh; /* Ensure each container is full screen */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.aboutContainer {
+  padding-top: 50px; /* Added padding to push content below navbar */
+  height: calc(100vh - 50px); /* Adjusted height to take navbar into account */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Aligns content to the top */
+  align-items: center;
+}
+.resumeButton {
+  margin-top: 20px;
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.gridContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.projectCard,
+.experienceCard {
+  width: calc(33.333% - 10px);
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.projectCard:hover,
+.experienceCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.projectContent,
+.experienceContent {
+  background-color: rgba(255, 255, 255, 0.85);
+  width: 100%;
+  padding: 20px;
+}
+
+/* Ensure global styles do not interfere */

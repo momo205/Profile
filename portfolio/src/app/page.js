@@ -1,16 +1,4 @@
-import * as React from "react";
-import {
-  AppBar,
-  Container,
-  Box,
-  Toolbar,
-  Typography,
-  Button,
-  Paper,
-  Grid,
-  CssBaseline,
-} from "@mui/material";
-
+import styles from "./home.module.css";
 const experiences = [
   {
     title: "Personaland",
@@ -74,217 +62,85 @@ const projects = [
 
 export default function Home() {
   return (
-    <Container maxWidth="100%" disableGutters sx={{ overflow: "hidden" }}>
-      {/* Full-screen background and main container */}
-      <CssBaseline /> {/* Reset margin/padding globally */}
-      <Box
-        sx={{
-          height: "100vh", // Ensure it's using the full height of the viewport
-          width: "100vw", // Ensure it's using the full width of the viewport
-          backgroundImage: 'url("/images/portfolio.jpg")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          position: "relative", // Ensures the AppBar positions itself relative to this Box
-          overflow: "hidden", // Optional: Prevent any overflow
-        }}
-      >
-        <AppBar
-          position="fixed"
-          sx={{ background: "none", boxShadow: "none", width: "100%" }}
-        >
-          <Toolbar sx={{ justifyContent: "space-between" }}>
-            <Typography variant="h6" sx={{ color: "white" }}>
-              Home
-            </Typography>
-            <Typography variant="h6" sx={{ color: "white" }}>
-              About Me
-            </Typography>
+    <>
+      <div className={styles.fullScreenContainer}>
+        <nav className={styles.navigationBar}>
+          <a href="#home" className={styles.navLink}>
+            Home
+          </a>
+          <a href="#about" className={styles.navLink}>
+            About Me
+          </a>
+          <a href="#experience" className={styles.navLink}>
+            Experience
+          </a>
+          <a href="#projects" className={styles.navLink}>
+            Projects
+          </a>
+        </nav>
 
-            <Typography variant="h6" sx={{ color: "white" }}>
-              Experience
-            </Typography>
-            <Typography variant="h6" sx={{ color: "white" }}>
-              Projects
-            </Typography>
-          </Toolbar>
-        </AppBar>
+        <div className={styles.homeContainer}>
+          <div className={styles.title}>
+            <h1>Muhammad Ahmed</h1>
+          </div>
+          <h2>Full Stack Software Engineer</h2>
+          <div className="images">
+            <img
+              src="/images/linkedln.png"
+              alt="LinkedIn"
+              className={styles.iconLink}
+              href="https://www.linkedin.com"
+            />
 
-        {/* Content area in the center */}
-        <Box
-          sx={{
-            position: "absolute", // Makes sure this Box doesn't affect the AppBar
-            top: "50%", // Center vertically
-            left: "50%", // Center horizontally
-            transform: "translate(-50%, -50%)", // Perfect center alignment
-            textAlign: "center",
-            color: "white",
-            maxWidth: 600, // Restrict content width for readability
-          }}
-        >
-          <Typography variant="h3" sx={{ mb: 2 }}>
-            Muhammad Ahmed
-          </Typography>
-          <Typography variant="h5">Full Stack Software Engineer</Typography>
+            <img
+              href="https://github.com"
+              src="/images/github.png"
+              alt="GitHub"
+              className={styles.iconLink}
+            />
+          </div>
+        </div>
 
-          <Button
-            sx={{ mt: 1, color: "white", backgroundColor: "transparent" }}
-          >
-            Resume
-          </Button>
-        </Box>
-      </Box>
-      {/* Additional sections like 'about', 'experience', etc., would be similar to the 'home' section but with different content */}
-      {/*  <Box
-        sx={{
-          marginTop: "350px",
-          padding: "100px",
-          alignItems: "center",
-          height: "650px",
-          width: "100%",
-          mt: 5,
-        }}
-      >
-        <Typography variant="h3" component="h2">
-          About Me
-        </Typography>
-        <Typography variant="h5" sx={{ maxWidth: 600 }}> C </Typography>
-      </Box>*/}
-      {/* projects section */}
-      <Box
-        sx={{
-          padding: "50px 20px",
-          textAlign: "center",
-          backgroundColor: "rgba(255, 255, 255, 0.7)", // Slightly more transparency
-          backdropFilter: "blur(10px)", // Optional: Adds blur effect to the background
-        }}
-      >
-        <Typography
-          variant="h4"
-          sx={{ mb: 4, textTransform: "uppercase", color: "secondary.main" }}
-        >
-          Projects
-        </Typography>
-        <Grid container spacing={4} justifyContent="center">
-          {projects.map((project, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
-              <Paper
-                elevation={3}
-                sx={{
-                  height: 300,
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  padding: 2,
-                  backgroundImage: `url(${project.image})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  transition: "transform 0.3s, box-shadow 0.3s",
-                  "&:hover": {
-                    transform: "scale(1.05)",
-                    boxShadow: "0 8px 24px rgba(0,0,0,0.5)", // Enhanced shadow on hover for better visibility
-                  },
-                  overflow: "hidden",
-                }}
-              >
-                <Box
-                  sx={{
-                    p: 2,
-                    backgroundColor: "rgba(255,255,255,0.85)", // Increase opacity for better readability
-                    width: "100%",
-                    height: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-between",
-                    color: "text.primary", // Ensure text color is readable
-                  }}
-                >
-                  <Typography
-                    variant="h6"
-                    sx={{ fontWeight: "bold", fontSize: "1.25rem" }}
-                  >
-                    {project.title}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{ fontSize: 14, display: "block", mt: 1 }}
-                  >
-                    {project.role}
-                  </Typography>
-                  {/* Now showing on hover */}
-                  <Typography
-                    variant="body2"
-                    sx={{ fontSize: 12, display: "block", mt: 1 }}
-                  >
+        <div className={styles.aboutContainer}>
+          <h3>About Me</h3>
+        </div>
+
+        <div className={styles.projectsContainer}>
+          <h2>Projects</h2>
+          <div className={styles.gridContainer}>
+            {projects.map((project, index) => (
+              <div key={index} className={styles.projectCard}>
+                <div className={styles.projectContent}>
+                  <h3>{project.title}</h3>
+                  <p>{project.role}</p>
+                  <p>
                     {project.description} | Tools: {project.tools}
-                  </Typography>
-                </Box>
-              </Paper>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
-      {/* Experience Section */}
-      <Box
-        sx={{
-          padding: "50px 20px",
-          textAlign: "center",
-          backgroundColor: "rgba(255, 255, 255, 0.5)",
-        }}
-      >
-        <Typography variant="h4" sx={{ mb: 4, textTransform: "uppercase" }}>
-          Experience
-        </Typography>
-        <Grid container spacing={4} justifyContent="center">
-          {experiences.map((exp, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
-              <Paper
-                elevation={3}
-                sx={{
-                  height: 300,
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  padding: 2,
-                  backgroundImage: `url(${exp.image})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  transition: "transform 0.3s, box-shadow 0.3s",
-                  "&:hover": {
-                    transform: "scale(1.05)",
-                    boxShadow: "0 8px 24px rgba(0,0,0,0.3)",
-                  },
-                  overflow: "hidden",
-                }}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className={styles.experienceContainer}>
+          <h2>Experience</h2>
+          <div className={styles.gridContainer}>
+            {experiences.map((exp, index) => (
+              <div
+                key={index}
+                className={styles.experienceCard}
+                style={{ backgroundImage: `url(${exp.image})` }}
               >
-                <Box
-                  sx={{
-                    p: 2,
-                    backgroundColor: "rgba(255,255,255,0.8)",
-                    width: "100%",
-                    height: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-between",
-                  }}
-                >
-                  <Typography variant="h6" sx={{ fontWeight: "bold" }}>
-                    {exp.title}
-                  </Typography>
-                  <Typography variant="body2" sx={{ fontSize: 12 }}>
-                    {exp.summary}
-                  </Typography>
-                  <Typography variant="body2" sx={{ display: "none" }}>
-                    {exp.description}
-                  </Typography>
-                </Box>
-              </Paper>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
-    </Container>
+                <div className={styles.experienceContent}>
+                  <h3>{exp.title}</h3>
+                  <p>{exp.summary}</p>
+                  <p>{exp.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
