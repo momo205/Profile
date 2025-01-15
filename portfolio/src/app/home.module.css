@@ -11,88 +11,150 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  /* background-color: #f0f0f0; /* Lighter shade of white */
+  background-color: #f9f9f9; /* Lighter shade of white */
   color: #333; /* Darker text color for better contrast */
-  font-family: "Arial", sans-serif; /* Font similar to the image */
+  font-family: "Helvetica Neue", Arial, sans-serif; /* Font similar to the image */
   height: 100vh;
   padding: 20px;
 }
-
 .title {
   display: flex;
+  flex-direction: column; /* Changed to stack the elements vertically */
   align-items: center;
   justify-content: center;
-  gap: 10px; /* Space between text and icons */
+  text-align: center; /* Center the text for both h1 and h2 */
 }
 
 .title h1 {
-  font-size: 48px;
-  margin: 0;
-  margin-left: 45px;
+  font-size: 32px; /* Larger font size for the main title */
+  font-weight: bold; /* Bold weight for the main title to stand out */
+  margin: 0; /* Remove any default margin */
+  color: #000; /* Ensuring the text is clearly visible */
 }
 
 .title h2 {
-  font-size: 24px;
-  border-bottom: 1px solid #000000; /* Line under the text */
-}
-.images {
-  display: inline-block;
-}
-
-.iconLink {
-  display: inline-block;
-  width: 80px; /* Set consistent size for icons */
-  height: 80px;
-  background-size: cover; /* Ensure the icon covers the element */
-  background-repeat: no-repeat; /* No repeat of the background */
-  margin: 10px; /* Add some space around the icons */
-}
-
-/* Specific icon adjustments might be necessary depending on their original size and aspect ratio */
-.iconLinkedIn img,
-.iconMedium img {
-  width: 100%; /* Scale the images to fit their containers */
-  height: 100%; /* Maintain aspect ratio */
-  object-fit: contain; /* Avoid stretching images */
-}
-
-.resumeButton {
-  margin-top: 20px;
-  padding: 10px 20px;
-  border: 1px solid black;
-  color: black;
-  background-color: transparent; /* Ensure button background is transparent */
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 16px; /* Adjust font size for visibility */
+  font-size: 18px; /* Smaller font size for the subheader */
+  font-weight: lighter; /* Lighter weight to differentiate from the main title */
+  margin: 5px 0; /* Space above and below to separate from h1 and content below */
+  border-bottom: 1px solid #ccc; /* Light line under the text for subtle emphasis */
+  padding-bottom: 5px; /* Padding below to distance the line from the text */
 }
 .navigationBar {
-  position: fixed;
-  top: 0;
-  width: 100%;
+  position: fixed; /* Changed from relative to fixed */
+  top: 20px; /* Distance from the top of the viewport */
+  left: 50%; /* Centering the navbar horizontally */
+  transform: translateX(-50%); /* Ensures it stays centered */
   display: flex;
-  justify-content: center; /* Center the links */
-  padding: 10px 20px;
-  background: linear-gradient(135deg, transparent); /* Gradient background */
+  justify-content: center; /* Center the links inside the navbar */
+  padding: 10px 20px; /* Padding inside the navbar */
+  background: rgba(
+    255,
+    254,
+    254,
+    0.5
+  ); /* Semi-transparent background for visibility */
   border-radius: 20px; /* Rounded corners */
-  margin: 20px auto; /* Center horizontally and add some margin top and bottom */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  z-index: 1000;
-  color: black;
-  border: 1px solid transparent;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for aesthetics */
+  z-index: 1000; /* High z-index to keep it above other content */
+  color: black; /* Text color */
+  border: 1px solid transparent; /* Light grey border for subtle emphasis */
 }
 
 .navLink {
-  color: black;
-  text-decoration: none;
-  padding: 10px 15px; /* Adjust padding to bring links closer */
-  margin: 0 10px; /* Space between links */
-  font-weight: bold; /* Make the text bold */
-  transition: color 0.3s ease; /* Smooth transition for hover effects */
+  color: black; /* Link color */
+  text-decoration: none; /* No underline on links */
+  padding: 8px 12px; /* Adjust padding to suit your design */
+  margin: 0 10px; /* Horizontal spacing between links */
+  font-weight: 500; /* Semi-bold font weight */
+  transition: color 0.3s ease; /* Smooth transition for color changes */
 }
 
 .navLink:hover {
-  color: #ffdfef; /* Light pink color on hover */
+  color: lightblue; /* Change to light blue on hover for a visual effect */
+}
+
+.Homebuttons button {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  background-color: transparent;
+  background-image: linear-gradient(
+    to right,
+    #ffffff,
+    #ffffff
+  ); /* Gradient from white to light gray */
+  color: #000; /* Black text */
+  text-decoration: none;
+  border-radius: 20px; /* Rounded corners */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.Homebuttons button:hover {
+  background-image: linear-gradient(
+    to right,
+    #eee,
+    #eee
+  ); /* Gradient hover effect */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+}
+.contact {
+  position: absolute;
+  top: 35px;
+  right: 40px;
+  z-index: 1050;
+  border: 1px solid #eee;
+  border-radius: 20px;
+}
+.logo {
+  font-family: "Great Vibes", cursive;
+  color: #333;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  font-size: 28px;
+}
+
+/* Style for the button inside the .contact div */
+.Homebuttons {
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  background-image: linear-gradient(
+    to right,
+    #ffffff,
+    #ffffff
+  ); /* Gradient from white to light gray */
+  color: #000; /* Black text */
+  text-decoration: none;
+  border-radius: 20px; /* Rounded corners */
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.Homebuttons:hover {
+  background-color: #eee; /* Darker shade on hover */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.homeDescription {
+  font-size: 16px; /* Adjusted to a slightly smaller and more professional font size */
+  color: #444; /* Slightly darker than the main text for emphasis but still soft */
+  text-align: center; /* Centered text for a clean layout */
+  justify-content: center; /* Ensures content is centered within the container */
+  width: 90%; /* Scaled width to better fit the container and screen */
+  max-width: 800px; /* Maximum width to maintain readability */
+  margin: 20px auto; /* Centering the block horizontally and adding vertical spacing */
+  padding: 10px; /* Padding to create space around the text */
+  font-family: "Helvetica Neue", Arial, sans-serif; /* Consistent font family with the rest of the container */
+  line-height: 1.6; /* Increased line height for better readability */
+  background-color: transparent; /* Background should be consistent with the container */
+  font-weight: 500;
 }
 
 .contentContainer,
@@ -113,15 +175,6 @@
   flex-direction: column;
   justify-content: flex-start; /* Aligns content to the top */
   align-items: center;
-}
-.resumeButton {
-  margin-top: 20px;
-  color: white;
-  background-color: transparent;
-  text-decoration: none;
-  padding: 10px 20px;
-  border: 1px solid white;
-  border-radius: 5px;
 }
 
 .gridContainer {

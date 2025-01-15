@@ -64,40 +64,48 @@ export default function Home() {
   return (
     <>
       <div className={styles.fullScreenContainer}>
-        <nav className={styles.navigationBar}>
-          <a href="#home" className={styles.navLink}>
-            Home
-          </a>
-          <a href="#about" className={styles.navLink}>
-            About Me
-          </a>
-          <a href="#experience" className={styles.navLink}>
-            Experience
-          </a>
-          <a href="#projects" className={styles.navLink}>
-            Projects
-          </a>
-        </nav>
-
+        <div style={{ display: "flex", alignItems: "center", width: "100%" }}>
+          <div className={styles.logo}>
+            <h3>MA</h3>
+          </div>
+          <nav className={styles.navigationBar}>
+            <a href="#home" className={styles.navLink}>
+              Home
+            </a>
+            <a href="#about" className={styles.navLink}>
+              About Me
+            </a>
+            <a href="#experience" className={styles.navLink}>
+              Experience
+            </a>
+            <a href="#projects" className={styles.navLink}>
+              Projects
+            </a>
+          </nav>
+        </div>
+        <div className={styles.contact}>
+          <button className={styles.Homebuttons} style={{ fontSize: "15px" }}>
+            Contact Me
+          </button>
+        </div>
         <div className={styles.homeContainer}>
           <div className={styles.title}>
             <h1>Muhammad Ahmed</h1>
+            <h2>Full Stack Software Engineer</h2>
           </div>
-          <h2>Full Stack Software Engineer</h2>
-          <div className="images">
-            <img
-              src="/images/linkedln.png"
-              alt="LinkedIn"
-              className={styles.iconLink}
-              href="https://www.linkedin.com"
-            />
 
-            <img
-              href="https://github.com"
-              src="/images/github.png"
-              alt="GitHub"
-              className={styles.iconLink}
-            />
+          <div className={styles.homeDescription}>
+            <h4 style={{ fontWeight: "400" }}>
+              Passionate software engineering student with skills in front-end
+              and back-end development, driven to create innovative solutions
+              that make a positive impact. Currently seeking internships to
+              apply my expertise and further grow as a developer.
+            </h4>
+          </div>
+          <div className={styles.Homebuttons}>
+            <button href="https://www.linkedin.com"> LinkedIn</button>
+            <button href="https://github.com"> Github</button>
+            <button>Resume </button>
           </div>
         </div>
 
