@@ -11,11 +11,14 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: #f9f9f9; /* Lighter shade of white */
-  color: #333; /* Darker text color for better contrast */
-  font-family: "Helvetica Neue", Arial, sans-serif; /* Font similar to the image */
-  height: 100vh;
-  padding: 20px;
+  background-color: #f9f9f9; /* Slightly off-white for a softer look */
+  color: #333; /* Dark grey for strong contrast */
+  font-family: "Helvetica Neue", Arial, sans-serif; /* A more professional typeface */
+  width: 100%; /* Full width */
+  height: 100vh; /* Full viewport height */
+  padding: 20px; /* Padding around the content */
+  box-sizing: border-box; /* Includes padding in width and height */
+  margin-top: -100px;
 }
 .title {
   display: flex;
@@ -47,11 +50,10 @@
   display: flex;
   justify-content: center; /* Center the links inside the navbar */
   padding: 10px 20px; /* Padding inside the navbar */
-  background: rgba(
+  background: rgb(
     255,
-    254,
-    254,
-    0.5
+    255,
+    255
   ); /* Semi-transparent background for visibility */
   border-radius: 20px; /* Rounded corners */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for aesthetics */
@@ -75,7 +77,7 @@
 
 .Homebuttons button {
   padding: 8px 16px;
-  border: 1px solid #ddd;
+  border: 1px solid #ffffff;
   background-color: transparent;
   background-image: linear-gradient(
     to right,
@@ -120,7 +122,7 @@
 }
 
 /* Style for the button inside the .contact div */
-.Homebuttons {
+.contactButton {
   padding: 8px 16px;
   border: 1px solid transparent;
   background-color: transparent;
@@ -135,6 +137,15 @@
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.image img {
+  width: 100px; /* Set the width as needed */
+  height: 100px; /* Height equal to the width to maintain aspect ratio */
+  border-radius: 50%; /* Makes the image circular */
+  border: 3px solid #fff; /* Optional: adds a white border around the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds subtle shadow for depth */
+  object-fit: cover; /* Ensures the image covers the area without distorting aspect ratio */
 }
 
 .Homebuttons:hover {
@@ -157,25 +168,63 @@
   font-weight: 500;
 }
 
-.contentContainer,
-.aboutContainer,
-.projectsContainer,
-.experienceContainer {
-  width: 100%;
-  height: 100vh; /* Ensure each container is full screen */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 .aboutContainer {
-  padding-top: 50px; /* Added padding to push content below navbar */
-  height: calc(100vh - 50px); /* Adjusted height to take navbar into account */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* Aligns content to the top */
+  background-color: #fff;
+  text-align: center;
+  justify-content: center;
+  font-family: "Times New Roman", Times, serif;
+  height: 800px;
+  width: auto;
   align-items: center;
+  flex-direction: column;
+  display: flex;
 }
+
+.aboutContainer h3 {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Times New Roman", Times, serif;
+}
+.aboutBody {
+  position: relative;
+}
+
+.cardsContainer {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 50px;
+  width: 1200px; /* This will distribute space evenly around the items */
+  /* Extra space above the card container */
+}
+
+.card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  width: 30%; /* Each card takes up roughly a third of the container width */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 0 10px; /* Spacing between cards */
+  border-bottom: 1px solid black;
+}
+
+.card h5 {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #666;
+  font-size: 16px;
+}
+
+.card:hover {
+  transform: scale(1.05); /* Slightly enlarge the card */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for transform and shadow */
+}
+
+/* Adjust h3 for the About Me main title */
 
 .gridContainer {
   display: flex;
@@ -183,31 +232,179 @@
   justify-content: center;
   gap: 16px;
 }
+.icons {
+  width: 100px; /* Set the width as needed */
+  height: 100px; /* Height equal to the width to maintain aspect ratio */
+  border-radius: 50%; /* Makes the image circular */
+  border: 3px solid #fff; /* Optional: adds a white border around the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds subtle shadow for depth */
+  object-fit: cover;
+}
 
-.projectCard,
-.experienceCard {
-  width: calc(33.333% - 10px);
-  height: 300px;
+.toolsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px; /* space between images */
+}
+
+.toolImage {
+  width: 50px; /* or any size that fits your design */
+  height: auto; /* maintain aspect ratio */
+}
+
+.experienceContainer,
+.projectsContainer {
+  text-align: center;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates three columns */
+  grid-template-rows: repeat(
+    2,
+    auto
+  ); /* Creates two rows, height adjusts to content */
+  gap: 16px; /* Space between cards */
+  padding: 20px; /* Padding around the grid container */
+}
+
+.experienceCard,
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f9f9f9; /* Light grey background */
+  border: 1px solid #ccc; /* Grey border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.experienceContent,
+.projectContent {
+  text-align: center;
+}
+
+.experienceContent,
+.projectContent h3 {
+  font-size: 20px; /* Largest text for title */
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.experienceContent,
+.projectContent p {
+  font-size: 16px; /* Medium text for role */
+  margin-bottom: 5px;
+}
+
+.experienceContent,
+.projectContent p:last-of-type {
+  font-size: 14px; /* Smallest text for description */
+  font-style: italic;
+}
+.contacts,
+.experienceContainer {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
+}
+
+.gutter {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.projectCard:hover,
-.experienceCard:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-}
-
-.projectContent,
-.experienceContent {
-  background-color: rgba(255, 255, 255, 0.85);
+  justify-content: center;
+  padding: 50px;
+  background-color: #f9f9f9;
   width: 100%;
+}
+
+.contactForm {
+  width: 60%; /* Adjust based on preference */
+  max-width: 600px;
   padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.contactForm h3 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+}
+
+.contactForm input[type="text"],
+.contactForm input[type="email"],
+.contactForm textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contactForm button {
+  width: 100%;
+  padding: 10px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contactForm button:hover {
+  background-color: #b4c3d2;
+}
+
+.Homebuttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.Homebuttons button {
+  background-color: transparent;
+  color: #000000;
+  border: 1px solid #ffffff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.Homebuttons button:hover {
+  background-color: #000000;
+  color: white;
+}
+
+.logo h3 {
+  font-size: 24px;
+  color: #333;
+}
+
+.logo {
+  margin-bottom: 20px;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.footer p {
+  font-size: 14px;
 }
 
 /* Ensure global styles do not interfere */
