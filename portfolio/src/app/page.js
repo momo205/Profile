@@ -1,5 +1,6 @@
-import { fontWeight } from "@mui/system";
+import { fontFamily, fontWeight } from "@mui/system";
 import styles from "./home.module.css";
+import "./styles/global.css";
 const experiences = [
   {
     title: "Personaland",
@@ -66,51 +67,57 @@ export default function Home() {
   return (
     <>
       <div className={styles.fullScreenContainer}>
-        <div style={{ display: "flex", alignItems: "center", width: "100%" }}>
-          <div className={styles.logo}>
-            <h3>MA</h3>
-          </div>
-          <nav className={styles.navigationBar}>
-            <a href="#home" className={styles.navLink}>
-              Home
-            </a>
-            <a href="#about" className={styles.navLink}>
-              About Me
-            </a>
-            <a href="#experience" className={styles.navLink}>
-              Experience
-            </a>
-            <a href="#projects" className={styles.navLink}>
-              Projects
-            </a>
-          </nav>
-        </div>
-        <div className={styles.contact}>
-          <button className={styles.contactButton} style={{ fontSize: "15px" }}>
-            Contact Me
-          </button>
-        </div>
         <div className={styles.homeContainer}>
-          <div className={styles.image}>
-            <img src="/images/profile.jpg" />
+          <img src="/back6.jpg" className={styles.backgroundImage} />
+          <div style={{ display: "flex", alignItems: "center", width: "100%" }}>
+            <div className={styles.logo}>
+              <h3>MA</h3>
+            </div>
+            <nav className={styles.navigationBar}>
+              <a href="#home" className={styles.navLink}>
+                Home
+              </a>
+              <a href="#about" className={styles.navLink}>
+                About Me
+              </a>
+              <a href="#experience" className={styles.navLink}>
+                Experience
+              </a>
+              <a href="#projects" className={styles.navLink}>
+                Projects
+              </a>
+            </nav>
           </div>
-          <div className={styles.title}>
-            <h1>Muhammad Ahmed</h1>
-            <h2>Full Stack Software Engineer</h2>
+          <div className={styles.contact}>
+            <button
+              className={styles.contactButton}
+              style={{ fontSize: "15px" }}
+            >
+              Contact Me
+            </button>
           </div>
+          <div className={styles.homeContainer}>
+            <div className={styles.image}>
+              <img src="/images/profile.jpg" />
+            </div>
+            <div className={styles.title}>
+              <h1>Muhammad Ahmed</h1>
+              <h2>Full Stack Software Engineer</h2>
+            </div>
 
-          <div className={styles.homeDescription}>
-            <h4 style={{ fontWeight: "400" }}>
-              Passionate software engineering student with skills in front-end
-              and back-end development, driven to create innovative solutions
-              that make a positive impact. Currently seeking internships to
-              apply my expertise and further grow as a developer.
-            </h4>
-          </div>
-          <div className={styles.Homebuttons}>
-            <button href="https://www.linkedin.com"> LinkedIn</button>
-            <button href="https://github.com"> Github</button>
-            <button>Resume </button>
+            <div className={styles.homeDescription}>
+              <h4 style={{ fontWeight: "400" }}>
+                Passionate software engineering student with skills in front-end
+                and back-end development, driven to create innovative solutions
+                that make a positive impact. Currently seeking internships to
+                apply my expertise and further grow as a developer.
+              </h4>
+            </div>
+            <div className={styles.Homebuttons}>
+              <button href="https://www.linkedin.com"> LinkedIn</button>
+              <button href="https://github.com"> Github</button>
+              <button>Resume </button>
+            </div>
           </div>
         </div>
 
@@ -126,17 +133,6 @@ export default function Home() {
             </h3>
             <h3 style={{}}>City College Of New York'26</h3>
             <h3 style={{}}>Computer Science</h3>
-            <p
-              style={{
-                fontFamily: "Times New Roman, Times, serif",
-                width: "790px",
-              }}
-            >
-              Skilled in full-stack web development, I specialize in front-end
-              and back-end technologies, with experience integrating machine
-              learning models to create AI-driven solutions. Proficient in
-              building scalable, user-centered applications.
-            </p>
           </div>
           <div style={{ paddingBottom: "60px" }}>
             {" "}
@@ -155,24 +151,28 @@ export default function Home() {
               <img className={styles.icons} src="/images/solution_icon.png" />
               <h5>Finding Solutions</h5>
               <p>
-                I am passionate about leveraging technology to develop
-                innovative and impactful systems.
+                I am passionate about solving complex problems through
+                technology by leveraging my skills in full-stack development and
+                AI-driven systems to create impactful solutions.
               </p>
             </div>
             <div className={styles.card}>
               <img className={styles.icons} src="/images/community_icon.jpeg" />
               <h5>Helping Community</h5>
               <p>
-                Giving back to the community with my expertise in computer
-                science.
+                I strive to complement my technical expertise with strong
+                communication and leadership skills to deliver impactful,
+                user-focused solutions that address community needs effectively.
               </p>
             </div>
             <div className={styles.card}>
               <img className={styles.icons} src="/images/challenges_icon.png" />
               <h5>Making Innovations</h5>
               <p>
-                Constantly learning new skills in computer science to better my
-                abilities and contribute to groundbreaking projects.
+                Dedicated to constant improvement, I approach challenges as
+                opportunities to enhance my skills and processes, creating
+                scalable solutions that adapt and grow to meet both current and
+                future needs.
               </p>
             </div>
           </div>
@@ -187,7 +187,6 @@ export default function Home() {
                   <p>{project.role}</p>
                   <p>{project.description}</p>
                   <div className={styles.toolsContainer}>
-                    Tools:
                     {project.tools.map((tool, idx) => (
                       <img
                         key={idx}
@@ -205,7 +204,7 @@ export default function Home() {
 
         <div className={styles.experienceContainer}>
           <h2>Experience</h2>
-          <div className={styles.gridContainer}>
+          <div className={styles.gridContainer} style={{ marginLeft: "120px" }}>
             {experiences.map((exp, index) => (
               <div
                 key={index}
@@ -213,8 +212,25 @@ export default function Home() {
                 style={{ backgroundImage: `url(${exp.image})` }}
               >
                 <div className={styles.experienceContent}>
-                  <h3>{exp.title}</h3>
-                  <p>{exp.summary}</p>
+                  <h3
+                    style={{
+                      fontFamily: "Times New Roman , Times, serif",
+                      fontStyle: "normal",
+                      fontSize: "21px",
+                    }}
+                  >
+                    {exp.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontWeight: "normal",
+                      fontFamily: "Times New Roman , Times, serif",
+                      fontStyle: "normal",
+                      fontSize: "16px",
+                    }}
+                  >
+                    {exp.summary}
+                  </p>
                   <p>{exp.description}</p>
                 </div>
               </div>
@@ -229,12 +245,12 @@ export default function Home() {
             <textarea placeholder="Message" rows="5"></textarea>
             <button type="submit">Submit</button>
           </form>
-          <div className={styles.Homebuttons}>
+          <div className={styles.homebuttons}>
             <button href="https://www.linkedin.com">LinkedIn</button>
             <button href="https://github.com">Github</button>
             <button href="/resume.pdf">Resume</button>
           </div>
-          <div className={styles.logo}>
+          <div className={styles.logo3}>
             <h3>MA</h3>
           </div>
           <div className={styles.footer}>
