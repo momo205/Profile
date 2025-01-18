@@ -8,7 +8,6 @@ const experiences = [
     summary: "Developed mobile apps to enhance user interaction.",
     description:
       "Led the development of innovative mobile applications focusing on improving user engagement through intuitive UI/UX designs. Utilized React Native extensively to ensure cross-platform compatibility.",
-    tools: ["/images/supa.png", "/images/react.jpeg ", "/images/node.png"],
   },
   {
     title: "Department of Design and Construction",
@@ -31,21 +30,21 @@ const projects = [
     role: "Maternal Health Monitor using ML",
     description:
       "Created a system to monitor maternal health using machine learning algorithms to analyze health data and provide real-time updates to healthcare providers.",
-    tools: ["/images/node.png", "/images/next.jpeg", "/images/mongo.png"],
+    tools: ["/images/node.png", "/images/react.jpeg", "/images/firebase.png"],
   },
   {
     title: "Thera Cam",
     role: "In-Home Fitness Tool",
     description:
       "Developed an application using Node.js and OpenPose technology to provide real-time exercise feedback, helping users maintain correct form during workouts.",
-    tools: ["/images/node.png", "/images/next.jpeg", "/images/mongo.png"],
+    tools: ["/images/node.png", "/images/next.jpeg", "/images/firebase.png"],
   },
   {
     title: "Fitness AI",
     role: "Personalized fitness tracker",
     description:
       "Implemented a fitness tracking app that uses artificial intelligence to personalize diet and exercise recommendations based on user input.",
-    tools: ["/images/node.png", "/images/next.jpeg", "/images/mongo.png"],
+    tools: ["/images/node.png", "/images/next.jpeg", "/images/ai.png"],
   },
   {
     title: "Green Scan",
@@ -59,7 +58,7 @@ const projects = [
     role: "Nearest Restaurant Finder",
     description:
       "Designed an application to locate the nearest halal restaurants, providing directions and details for users seeking halal options.",
-    tools: ["/images/node.png", "/images/next.jpeg", "/images/mongo.png"],
+    tools: ["/images/java.png", "/images/sql.jpeg"],
   },
 ];
 
@@ -96,7 +95,7 @@ export default function Home() {
               Contact Me
             </button>
           </div>
-          <div className={styles.homeContainer}>
+          <div className={styles.homeSection}>
             <div className={styles.image}>
               <img src="/images/profile.jpg" />
             </div>
@@ -178,7 +177,14 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.projectsContainer}>
-          <h2>Projects</h2>
+          <h3
+            style={{
+              fontWeight: "bold",
+              fontSize: "28px",
+            }}
+          >
+            Projects
+          </h3>
           <div className={styles.gridContainer}>
             {projects.map((project, index) => (
               <div key={index} className={styles.projectCard}>
@@ -203,8 +209,18 @@ export default function Home() {
         </div>
 
         <div className={styles.experienceContainer}>
-          <h2>Experience</h2>
-          <div className={styles.gridContainer} style={{ marginLeft: "120px" }}>
+          <h3
+            style={{
+              fontWeight: "bold",
+              fontSize: "28px",
+            }}
+          >
+            Experience
+          </h3>
+          <div
+            className={styles.gridContainer1}
+            style={{ marginLeft: "120px" }}
+          >
             {experiences.map((exp, index) => (
               <div
                 key={index}
@@ -239,7 +255,14 @@ export default function Home() {
         </div>
         <div className={styles.gutter}>
           <form className={styles.contactForm}>
-            <h3>Contact Me</h3>
+            <h3
+              style={{
+                fontWeight: "bold",
+                fontSize: "28px",
+              }}
+            >
+              Contact Me
+            </h3>
             <input type="text" placeholder="Name" />
             <input type="email" placeholder="Email" />
             <textarea placeholder="Message" rows="5"></textarea>

@@ -3,29 +3,35 @@
   overflow: hidden;
   margin: 0;
   padding: 0;
-  top: 0;
-  left: 0;
-}
-
-.homeContainer {
-  width: 100%;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  /* Slightly off-white for a softer look */
-  color: #ffffff; /* Dark grey for strong contrast */
-  font-family: "Helvetica Neue", Arial, sans-serif; /* A more professional typeface */
-  height: 100vh; /* Full viewport height */
-  padding: 20px; /* Padding around the content */
-  box-sizing: border-box; /* Includes padding in width and height */
-  position: relative; /* Relative positioning for background image */
+  font-family: "Times New Roman", Times, serif;
+}
+
+.homeContainer {
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
   color: transparent;
   background-color: transparent;
+}
+.homeSection {
+  margin-top: 180px;
+}
+.experienceContainer,
+.projectContainer,
+.gutter,
+.aboutContainer {
+  color: "black";
+  padding-top: 40px;
+}
+.gutter {
+  margin-left: 230px;
 }
 
 .backgroundImage {
@@ -84,6 +90,7 @@
   border-color: transparent;
   align-content: center;
   left: 32.5%;
+  margin-left: 33px;
 }
 
 .navLink {
@@ -181,13 +188,13 @@
   text-align: center;
   justify-content: center;
   font-family: "Times New Roman", Times, serif;
-  height: 800px;
+
   width: auto;
   align-items: center;
   flex-direction: column;
   display: flex;
+  height: 800px;
 }
-
 .aboutContainer h3 {
   font-size: 18px;
   font-weight: 500;
@@ -235,14 +242,6 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for transform and shadow */
 }
 
-/* Adjust h3 for the About Me main title */
-
-.gridContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px;
-}
 .icons {
   width: 100px; /* Set the width as needed */
   height: 100px; /* Height equal to the width to maintain aspect ratio */
@@ -257,7 +256,7 @@
   align-items: center;
   justify-content: flex-start;
   gap: 10px; /* space between images */
-  margin-left: 115px;
+  margin-left: 150px;
 }
 
 .toolImage {
@@ -268,7 +267,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds subtle shadow for depth */
   object-fit: cover; /* maintain aspect ratio */
 }
-
 .experienceContainer,
 .projectsContainer {
   text-align: center;
@@ -277,10 +275,6 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-left: 345px;
-}
-.experienceContainer {
-  margin-left: 345px;
 }
 
 .gridContainer {
@@ -290,6 +284,13 @@
     2,
     auto
   ); /* Creates two rows, height adjusts to content */
+  gap: 16px; /* Space between cards */
+  padding: 20px; /* Padding around the grid container */
+}
+.gridContainer1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates three columns */
+  grid-template-rows: repeat(2, auto);
   gap: 16px; /* Space between cards */
   padding: 20px; /* Padding around the grid container */
 }
@@ -312,6 +313,12 @@
   width: "500px";
 }
 
+.projectCard:hover,
+.experienceCard:hover {
+  transform: scale(1.05); /* Slightly enlarge the card */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 .experienceContent,
 .projectContent {
   text-align: center;
@@ -345,16 +352,6 @@
   text-align: center;
 }
 
-.gutter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 50px;
-  background-color: #f9f9f9;
-  width: 100%;
-}
-
 .contactForm {
   width: 60%; /* Adjust based on preference */
   max-width: 600px;
@@ -383,14 +380,15 @@
 }
 
 .contactForm button {
-  width: 100%;
+  width: 20%;
   padding: 10px;
-  background-color: #000000;
-  color: white;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-left: 18px;
 }
 
 .contactForm button:hover {
@@ -402,6 +400,7 @@
   justify-content: center;
   gap: 10px;
   margin-bottom: 20px;
+  margin-right: 200px;
 }
 
 .homebuttons button {
@@ -425,13 +424,20 @@
 
 .logo3 {
   margin-bottom: 20px;
+  margin-right: 195px;
+  font-style: cursive;
 }
 
 .footer {
-  width: 100%;
+  width: 60%;
   text-align: center;
   padding: 10px;
   border-top: 1px solid #ccc;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
 }
 
 .footer p {
